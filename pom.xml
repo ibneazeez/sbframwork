@@ -19,6 +19,7 @@
 
 	<properties>
 		<docker.image.prefix>ibneazeez</docker.image.prefix>
+		<springfox.version>2.4.0</springfox.version>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -76,6 +77,18 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
