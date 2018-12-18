@@ -50,6 +50,11 @@ public class User {
     @NotNull
     @Size(min = 4, max = 50)
     private String email;
+    
+    @Column(name = "mobile", length = 20)
+    @NotNull
+    @Size(min = 8, max = 20)
+    private String mobile;
 
     @Column(name = "enabled")
     @NotNull
@@ -59,21 +64,7 @@ public class User {
     @NotNull
     private Date lastPasswordResetDate;
 
-    
-    @Column(name = "mobile", length = 20)
-    @NotNull
-    @Size(min = 8, max = 20)
-    private String mobile;
-    
-    public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
-	@ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_authority",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
@@ -112,7 +103,31 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstname() {
+    public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getFirstname() {
         return firstName;
     }
 
